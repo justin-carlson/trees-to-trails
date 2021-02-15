@@ -3,8 +3,8 @@
     <img
       src="https://i.imgur.com/MFWrZSx.png"
       height="80"
-      alt="gatsby-universal"
-      title="gatsby-universal"
+      alt="Trees to Trails"
+      title="TREES TO TRAILS"
     />
   </a>
 </p>

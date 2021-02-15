@@ -2,18 +2,18 @@
   "title": "Home",
   "content": "intro.md",
   "gallery": [{
-    "title": "React Context",
-    "copy": "For global styles.",
-    "image": "../images/gallery/react-context.jpg"
+    "title": "Mount Tamalpais",
+    "copy": "Seven Sisters",
+    "image": "../images/gallery/mt-tam.jpg"
   },
   {
-    "title": "Page Transitions",
-    "copy": "Component-based for easy usage.",
-    "image": "../images/gallery/page-transitions.jpg"
+    "title": "Joshua Tree",
+    "copy": "Geology Tour Road",
+    "image": "../images/gallery/joshua-tree.jpg"
   },
   {
-    "title": "Intersection Observer",
-    "copy": "Including a polyfill for Safari.",
-    "image": "../images/gallery/intersection-observer.jpg"
+    "title": "Bay Trail",
+    "copy": "Golden hour",
+    "image": "../images/gallery/east-bay.jpg"
   }]
 }

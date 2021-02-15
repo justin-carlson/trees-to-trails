@@ -9,7 +9,7 @@ const Layout = ({ data, children }) => (
   <div>
     <GlobalStyle />
     <Head />
-    <Header title={data.site.siteMetadata.siteTitle} />
+    <Header title={'Trees to Trails'} />
     {children}
   </div>
 );

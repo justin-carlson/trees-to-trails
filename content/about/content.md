@@ -1,21 +1,5 @@
-Find the repository [on GitHub](https://github.com/fabe/gatsby-universal).
+Trees to Trails is about documenting and sharing the journey as we seek out trails for biking, hiking, camping and adventure.
 
-```
-# Installation
-gatsby new my-site https://github.com/fabe/gatsby-universal
+YouTube https://www.youtube.com/channel/UC33jAcN4YVPLwILxN8h8x1Q 
 
-# To develop
-yarn develop
-
-# To build
-yarn build
-
-# To test SSR (for Lighthouse etc.)
-yarn ssr
-
-# To format JS (precommit)
-yarn format
-
-# To generate favicons (included in `build`)
-yarn build:favicons
-```
+Instagram https://www.instagram.com/thetreestotrails/ 

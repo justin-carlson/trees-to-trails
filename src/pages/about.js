@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from 'components/layout';
 import Box from 'components/box';
 import Head from 'components/head';
-import Footer from 'components/footer';
+import Footer from '../components/footer/footer.js';
 
 const About = ({ data }) => (
   <Layout>
@@ -15,8 +15,8 @@ const About = ({ data }) => (
           __html: data.aboutJson.content.childMarkdownRemark.html,
         }}
       />
+      <Footer />
     </Box>
-    <Footer />
   </Layout>
 );
 

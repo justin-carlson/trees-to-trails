@@ -4,6 +4,7 @@ import Layout from 'components/layout';
 import Box from 'components/box';
 import Title from 'components/title';
 import Gallery from 'components/gallery';
+import Footer from 'components/Footer';
 import IOExample from 'components/io-example';
 import { graphql } from 'gatsby';
 
@@ -16,6 +17,7 @@ const Index = ({ data }) => (
     </Box>
     <div style={{ height: '20vh' }} />
     <Gallery items={data.homeJson.gallery} />
+    <Footer />
   </Layout>
 );
 

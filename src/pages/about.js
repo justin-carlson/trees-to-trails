@@ -15,8 +15,8 @@ const About = ({ data }) => (
           __html: data.aboutJson.content.childMarkdownRemark.html,
         }}
       />
-      <Footer />
     </Box>
+    <Footer />
   </Layout>
 );
 

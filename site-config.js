@@ -2,15 +2,15 @@ const path = require('path');
 
 module.exports = {
   siteTitle: `Trees to Trails`,
-  siteTitleShort: `GatsbyU`,
-  siteDescription: `An opinionated starter for Gatsby.`,
-  siteUrl: `https://gu.fabianschultz.com`,
+  siteTitleShort: `TreesToTrails`,
+  siteDescription: `We seek out trails for biking, hiking, camping and adventure.`,
+  siteUrl: `https://treestotrails.com`,
   themeColor: `#000`,
   backgroundColor: `#fff`,
   pathPrefix: null,
   logo: path.resolve(__dirname, 'src/images/icon.png'),
   social: {
-    twitter: `gatsbyjs`,
-    fbAppId: `966242223397117`,
+    twitter: ``,
+    fbAppId: ``,
   },
 };

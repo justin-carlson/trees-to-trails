@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from 'components/layout';
 import Box from 'components/box';
 import Head from 'components/head';
-import Footer from 'components/Footer';
+import Footer from 'components/footer';
 
 const About = ({ data }) => (
   <Layout>

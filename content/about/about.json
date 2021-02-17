@@ -1,4 +1,9 @@
 {
   "title": "About",
-  "content": "content.md"
+  "content": "content.md",
+  "gallery": [{
+    "title": "Mount Tamalpais",
+    "copy": "Tree & Trail",
+    "image": "../images/gallery/tree-and-trail.jpg"
+  }]
 }

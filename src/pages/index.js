@@ -14,7 +14,7 @@ const Index = ({ data }) => (
         {data.homeJson.content.childMarkdownRemark.rawMarkdownBody}
       </Title>
     </Box>
-    <div style={{ height: '20vh' }} />
+    {/* <div style={{ height: '2vh' }} /> */}
     <Gallery items={data.homeJson.gallery} />
     <Footer />
   </Layout>

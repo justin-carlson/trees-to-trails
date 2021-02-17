@@ -1,1 +1,1 @@
-Finding trails for hikes, bikes, camping & adventure
+Finding trails for hiking, biking, camping & adventure

@@ -7,13 +7,28 @@
     "image": "../images/gallery/mt-tam.jpg"
   },
   {
-    "title": "Joshua Tree",
-    "copy": "Geology Tour Road",
-    "image": "../images/gallery/joshua-tree.jpg"
+    "title": "Yosemite National Park",
+    "copy": "Glen Aulin",
+    "image": "../images/gallery/glen-aulin.jpg"
   },
   {
     "title": "East Bay",
     "copy": "Bay Trail",
     "image": "../images/gallery/east-bay.jpg"
+  },
+  {
+    "title": "Alabama Hills",
+    "copy": "Lone Pine California",
+    "image": "../images/gallery/alabama-hills-2.jpg"
+  },
+  {
+    "title": "Joshua Tree",
+    "copy": "Geology Tour Road",
+    "image": "../images/gallery/joshua-tree.jpg"
+  },
+  {
+    "title": "Inyo National Forest",
+    "copy": "Meysan Trail",
+    "image": "../images/gallery/meysan-trail.jpg"
   }]
 }

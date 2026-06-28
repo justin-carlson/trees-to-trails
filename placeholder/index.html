@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trees to Trails</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html{ scroll-behavior:smooth; }
+    body{ background:#efe9dd; color:#23211c; -webkit-font-smoothing:antialiased; }
+    ::selection{ background:#38463c; color:#efe9dd; }
+    a{ color:inherit; text-decoration:none; }
+    @keyframes ttDrift{ 0%{ transform:translateY(0); } 50%{ transform:translateY(7px); } 100%{ transform:translateY(0); } }
+    @keyframes ttKenburns{ 0%{ transform:scale(1.04); } 100%{ transform:scale(1.13); } }
+  </style>
+</head>
+<body>
+<div style="font-family:'Newsreader',Georgia,serif; background:#efe9dd; overflow-x:hidden;">
+
+  <!-- ============ COVER ============ -->
+  <section data-screen-label="Cover" style="position:relative; height:100vh; min-height:640px; width:100%; overflow:hidden; background:#11161a;">
+    <img src="/assets/sierra-haze.jpg" alt="Layered ridgelines fading into morning haze" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 62%; animation:ttKenburns 26s ease-in-out infinite alternate;">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(12,16,20,.52) 0%, rgba(12,16,20,.04) 26%, rgba(12,16,20,.0) 55%, rgba(12,16,20,.62) 100%);"></div>
+
+    <!-- top bar -->
+    <header style="position:absolute; top:0; left:0; right:0; z-index:3; display:flex; align-items:center; justify-content:space-between; padding:30px clamp(22px,4vw,64px); color:#f2eee3;">
+      <a href="/" style="display:flex; align-items:center; gap:13px;">
+        <svg width="17" height="23" viewBox="0 0 28 38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><polyline points="7,11 14,5 21,11"></polyline><polyline points="7,16.5 14,10.5 21,16.5"></polyline><polyline points="7,22 14,16 21,22"></polyline><line x1="14" y1="22" x2="14" y2="30.5"></line></svg>
+        <span style="font-size:17px; letter-spacing:.04em; font-weight:400;">Trees&nbsp;to&nbsp;Trails</span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:clamp(16px,2.4vw,34px); font-family:'Spline Sans Mono',monospace; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;">
+        <a href="#trips" style="opacity:.85;">Trips</a>
+        <a href="#index" style="opacity:.85;">Field Notes</a>
+        <a href="#about" style="opacity:.85;">About</a>
+      </nav>
+    </header>
+
+    <!-- hero text -->
+    <div style="position:absolute; z-index:3; left:clamp(22px,4vw,64px); right:clamp(22px,4vw,64px); bottom:clamp(78px,13vh,130px); color:#f4f0e6;">
+      <div style="font-family:'Spline Sans Mono',monospace; font-size:12px; letter-spacing:.26em; text-transform:uppercase; opacity:.82; margin-bottom:26px;">A field journal of the West</div>
+      <h1 style="font-weight:300; font-size:clamp(40px,7.4vw,104px); line-height:.99; letter-spacing:-.018em; max-width:16ch; text-wrap:balance;">Finding trails for hiking, biking, camping <span style="font-style:italic; font-weight:300;">&amp; adventure.</span></h1>
+    </div>
+
+    <!-- bottom rule -->
+    <div style="position:absolute; z-index:3; left:clamp(22px,4vw,64px); right:clamp(22px,4vw,64px); bottom:30px; display:flex; align-items:flex-end; justify-content:space-between; color:#f4f0e6; font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase;">
+      <div style="display:flex; align-items:center; gap:11px; opacity:.85;">
+        <span style="display:inline-block; width:9px; height:14px; border:1px solid currentColor; border-radius:6px; position:relative;"><span style="position:absolute; left:50%; top:3px; width:1px; height:3px; background:currentColor; transform:translateX(-50%); animation:ttDrift 2.4s ease-in-out infinite;"></span></span>
+        Scroll
+      </div>
+      <div style="opacity:.7; text-align:right;">37.9°N&nbsp;&nbsp;122.6°W</div>
+    </div>
+  </section>
+
+  <!-- ============ EDITORIAL INTRO ============ -->
+  <section style="background:#efe9dd; padding:clamp(86px,15vh,180px) clamp(22px,4vw,64px);">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:minmax(0,1fr); gap:0;">
+      <div data-fade style="font-family:'Spline Sans Mono',monospace; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#8a7350; display:flex; gap:18px; align-items:center; margin-bottom:40px;">
+        <span>01 — The Idea</span>
+        <span style="flex:1; height:1px; background:rgba(35,33,28,.2); max-width:120px;"></span>
+      </div>
+      <p data-fade style="font-weight:300; font-size:clamp(27px,4.1vw,52px); line-height:1.24; letter-spacing:-.012em; max-width:21ch; color:#23211c; text-wrap:pretty;">We're not collecting summits. We're after the <span style="font-style:italic;">overlooked hour</span> — the back way in, the road ridden in the wrong direction, the camp you reach just as the light goes long.</p>
+      <p data-fade style="margin-top:38px; max-width:54ch; font-size:clamp(16px,1.5vw,18.5px); line-height:1.66; color:#544e42;">Every entry is one trip, told honestly: where to leave the car, what the climb actually feels like, what to pack, and the small detail the guidebooks skip. Famous places, found again from a different angle.</p>
+    </div>
+  </section>
+
+  <!-- ============ FULL-BLEED TRIP FEATURES ============ -->
+  <div id="trips"></div>
+
+  <!-- Feature 1 — Mt Tam (linked) -->
+  <a href="/trip/" data-screen-label="Feature: Mount Tamalpais" style="position:relative; display:block; height:104vh; min-height:660px; width:100%; overflow:hidden; background:#1a1812; cursor:pointer;">
+    <img src="/assets/mt-tam.jpg" alt="A road winding down golden Marin hills" data-parallax style="position:absolute; inset:-6% 0; width:100%; height:112%; object-fit:cover; object-position:center 40%;">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(18,17,12,.18) 0%, rgba(18,17,12,0) 34%, rgba(18,17,12,.18) 64%, rgba(18,17,12,.74) 100%);"></div>
+    <div style="position:absolute; left:clamp(22px,4vw,64px); right:clamp(22px,4vw,64px); bottom:clamp(56px,9vh,96px); color:#f4f0e6;">
+      <div data-fade style="font-family:'Spline Sans Mono',monospace; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; opacity:.85; margin-bottom:20px; display:flex; gap:16px;"><span>Trip 01</span><span style="opacity:.7;">Marin County, CA</span></div>
+      <h2 data-fade style="font-weight:300; font-size:clamp(38px,6.4vw,86px); line-height:1.0; letter-spacing:-.018em; max-width:14ch;">Mount Tamalpais — the <span style="font-style:italic;">Seven Sisters</span></h2>
+      <div data-fade style="margin-top:24px; display:flex; flex-wrap:wrap; align-items:center; gap:14px 22px; font-family:'Spline Sans Mono',monospace; font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; opacity:.9;">
+        <span>Road bike</span><span style="opacity:.5;">/</span><span>26 mi</span><span style="opacity:.5;">/</span><span>2,460 ft</span><span style="opacity:.5;">/</span><span>Best at golden hour</span>
+        <span style="margin-left:6px; border-bottom:1px solid currentColor; padding-bottom:2px;">Read the trip →</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Feature 2 — Alabama Hills -->
+  <section data-screen-label="Feature: Alabama Hills" style="position:relative; height:104vh; min-height:660px; width:100%; overflow:hidden; background:#1a1812;">
+    <img src="/assets/alabama-hills.jpg" alt="A wagon-grey estate car loaded with a bike below the Sierra crest" data-parallax style="position:absolute; inset:-6% 0; width:100%; height:112%; object-fit:cover; object-position:center 46%;">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(18,17,12,.16) 0%, rgba(18,17,12,0) 34%, rgba(18,17,12,.2) 62%, rgba(18,17,12,.72) 100%);"></div>
+    <div style="position:absolute; left:clamp(22px,4vw,64px); right:clamp(22px,4vw,64px); bottom:clamp(56px,9vh,96px); color:#f4f0e6;">
+      <div data-fade style="font-family:'Spline Sans Mono',monospace; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; opacity:.85; margin-bottom:20px; display:flex; gap:16px;"><span>Trip 02</span><span style="opacity:.7;">Lone Pine, Eastern Sierra</span></div>
+      <h2 data-fade style="font-weight:300; font-size:clamp(38px,6.4vw,86px); line-height:1.0; letter-spacing:-.018em; max-width:14ch;">Sleeping in the <span style="font-style:italic;">Alabama Hills</span></h2>
+      <div data-fade style="margin-top:24px; display:flex; flex-wrap:wrap; align-items:center; gap:14px 22px; font-family:'Spline Sans Mono',monospace; font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; opacity:.9;">
+        <span>Car camp + gravel</span><span style="opacity:.5;">/</span><span>2 nights</span><span style="opacity:.5;">/</span><span>Free dispersed sites</span><span style="opacity:.5;">/</span><span>Spring &amp; fall</span>
+        <span style="margin-left:6px; opacity:.7;">Coming soon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3 — Joshua Tree -->
+  <section data-screen-label="Feature: Joshua Tree" style="position:relative; height:104vh; min-height:660px; width:100%; overflow:hidden; background:#1a1812;">
+    <img src="/assets/joshua-tree.jpg" alt="A lone cyclist on a sandy desert road through Joshua trees" data-parallax style="position:absolute; inset:-6% 0; width:100%; height:112%; object-fit:cover; object-position:center 58%;">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(18,17,12,.16) 0%, rgba(18,17,12,0) 34%, rgba(18,17,12,.18) 62%, rgba(18,17,12,.72) 100%);"></div>
+    <div style="position:absolute; left:clamp(22px,4vw,64px); right:clamp(22px,4vw,64px); bottom:clamp(56px,9vh,96px); color:#f4f0e6;">
+      <div data-fade style="font-family:'Spline Sans Mono',monospace; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; opacity:.85; margin-bottom:20px; display:flex; gap:16px;"><span>Trip 03</span><span style="opacity:.7;">Joshua Tree N.P.</span></div>
+      <h2 data-fade style="font-weight:300; font-size:clamp(38px,6.4vw,86px); line-height:1.0; letter-spacing:-.018em; max-width:14ch;">Geology Tour Road, <span style="font-style:italic;">alone</span></h2>
+      <div data-fade style="margin-top:24px; display:flex; flex-wrap:wrap; align-items:center; gap:14px 22px; font-family:'Spline Sans Mono',monospace; font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; opacity:.9;">
+        <span>Gravel bike</span><span style="opacity:.5;">/</span><span>18 mi</span><span style="opacity:.5;">/</span><span>Sand + washboard</span><span style="opacity:.5;">/</span><span>Winter only</span>
+        <span style="margin-left:6px; opacity:.7;">Coming soon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FIELD NOTES INDEX ============ -->
+  <section id="index" data-screen-label="Field Notes index" style="background:#efe9dd; padding:clamp(82px,13vh,150px) clamp(22px,4vw,64px);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-fade style="display:flex; align-items:baseline; justify-content:space-between; gap:24px; margin-bottom:clamp(40px,6vh,72px); border-bottom:1px solid rgba(35,33,28,.22); padding-bottom:24px;">
+        <h2 style="font-weight:300; font-size:clamp(30px,4.4vw,56px); letter-spacing:-.012em;">Field Notes</h2>
+        <span style="font-family:'Spline Sans Mono',monospace; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:#8a7350;">The full index — 08 trips</span>
+      </div>
+
+      <div id="ttIndexRows" style="position:relative;">
+        <!-- floating hover preview -->
+        <div id="ttPreview" style="position:fixed; z-index:40; width:248px; height:172px; pointer-events:none; opacity:0; transform:translate(-50%,-50%) scale(.96); transition:opacity .3s ease, transform .35s cubic-bezier(.2,.7,.2,1); overflow:hidden; box-shadow:0 24px 60px rgba(20,18,12,.32); background:#ddd;">
+          <img id="ttPreviewImg" alt="" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+
+        <a href="/trip/" class="ttRow" data-img="/assets/mt-tam.jpg" style="display:grid; grid-template-columns:54px minmax(0,1.5fr) minmax(0,1fr) 132px 88px; align-items:center; gap:18px; padding:22px 6px; border-bottom:1px solid rgba(35,33,28,.16); transition:padding-left .35s ease, background .35s ease;">
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#8a7350;">01</span>
+          <span style="font-size:clamp(20px,2.4vw,29px); font-weight:300; letter-spacing:-.01em;">Mount Tamalpais — Seven Sisters</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#6f685a;">Marin County</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#38463c;">Road · 26 mi</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#23211c; text-align:right;">Read →</span>
+        </a>
+
+        <div class="ttRow" data-img="/assets/alabama-hills.jpg" style="display:grid; grid-template-columns:54px minmax(0,1.5fr) minmax(0,1fr) 132px 88px; align-items:center; gap:18px; padding:22px 6px; border-bottom:1px solid rgba(35,33,28,.16); transition:padding-left .35s ease, background .35s ease;">
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#8a7350;">02</span>
+          <span style="font-size:clamp(20px,2.4vw,29px); font-weight:300; letter-spacing:-.01em;">Sleeping in the Alabama Hills</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#6f685a;">Lone Pine</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#38463c;">Camp · 2 nights</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#a89e8c; text-align:right;">Soon</span>
+        </div>
+
+        <div class="ttRow" data-img="/assets/joshua-tree.jpg" style="display:grid; grid-template-columns:54px minmax(0,1.5fr) minmax(0,1fr) 132px 88px; align-items:center; gap:18px; padding:22px 6px; border-bottom:1px solid rgba(35,33,28,.16); transition:padding-left .35s ease, background .35s ease;">
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#8a7350;">03</span>
+          <span style="font-size:clamp(20px,2.4vw,29px); font-weight:300; letter-spacing:-.01em;">Geology Tour Road, alone</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#6f685a;">Joshua Tree</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#38463c;">Gravel · 18 mi</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#a89e8c; text-align:right;">Soon</span>
+        </div>
+
+        <div class="ttRow" data-img="/assets/glen-aulin.jpg" style="display:grid; grid-template-columns:54px minmax(0,1.5fr) minmax(0,1fr) 132px 88px; align-items:center; gap:18px; padding:22px 6px; border-bottom:1px solid rgba(35,33,28,.16); transition:padding-left .35s ease, background .35s ease;">
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#8a7350;">04</span>
+          <span style="font-size:clamp(20px,2.4vw,29px); font-weight:300; letter-spacing:-.01em;">Tuolumne to Glen Aulin</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#6f685a;">Yosemite</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#38463c;">Hike · 11 mi</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#a89e8c; text-align:right;">Soon</span>
+        </div>
+
+        <div class="ttRow" data-img="/assets/meysan-trail.jpg" style="display:grid; grid-template-columns:54px minmax(0,1.5fr) minmax(0,1fr) 132px 88px; align-items:center; gap:18px; padding:22px 6px; border-bottom:1px solid rgba(35,33,28,.16); transition:padding-left .35s ease, background .35s ease;">
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#8a7350;">05</span>
+          <span style="font-size:clamp(20px,2.4vw,29px); font-weight:300; letter-spacing:-.01em;">Meysan Lakes, the long way</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#6f685a;">Inyo N.F.</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#38463c;">Hike · 9 mi</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#a89e8c; text-align:right;">Soon</span>
+        </div>
+
+        <div class="ttRow" data-img="/assets/east-bay.jpg" style="display:grid; grid-template-columns:54px minmax(0,1.5fr) minmax(0,1fr) 132px 88px; align-items:center; gap:18px; padding:22px 6px; border-bottom:1px solid rgba(35,33,28,.16); transition:padding-left .35s ease, background .35s ease;">
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#8a7350;">06</span>
+          <span style="font-size:clamp(20px,2.4vw,29px); font-weight:300; letter-spacing:-.01em;">The Bay Trail at last light</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#6f685a;">East Bay</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#38463c;">Path · 14 mi</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#a89e8c; text-align:right;">Soon</span>
+        </div>
+
+        <div class="ttRow" data-img="/assets/tree-and-trail.jpg" style="display:grid; grid-template-columns:54px minmax(0,1.5fr) minmax(0,1fr) 132px 88px; align-items:center; gap:18px; padding:22px 6px; border-bottom:1px solid rgba(35,33,28,.16); transition:padding-left .35s ease, background .35s ease;">
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#8a7350;">07</span>
+          <span style="font-size:clamp(20px,2.4vw,29px); font-weight:300; letter-spacing:-.01em;">Bolinas Ridge fire road</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#6f685a;">West Marin</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#38463c;">MTB · 16 mi</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#a89e8c; text-align:right;">Soon</span>
+        </div>
+
+        <div class="ttRow" data-img="/assets/sierra-haze.jpg" style="display:grid; grid-template-columns:54px minmax(0,1.5fr) minmax(0,1fr) 132px 88px; align-items:center; gap:18px; padding:22px 6px; border-bottom:1px solid rgba(35,33,28,.16); transition:padding-left .35s ease, background .35s ease;">
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#8a7350;">08</span>
+          <span style="font-size:clamp(20px,2.4vw,29px); font-weight:300; letter-spacing:-.01em;">Above the inversion</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#6f685a;">Southern Sierra</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#38463c;">Backpack · 3 days</span>
+          <span style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#a89e8c; text-align:right;">Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / CLOSING ============ -->
+  <section id="about" data-screen-label="About" style="position:relative; min-height:88vh; display:flex; align-items:flex-end; overflow:hidden; background:#26302a;">
+    <img src="/assets/tree-and-trail.jpg" alt="Forested Marin ridgeline rolling to the sea" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 56%; opacity:.4;">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(30,38,33,.5) 0%, rgba(30,38,33,.62) 60%, rgba(26,33,28,.92) 100%);"></div>
+    <div style="position:relative; z-index:2; width:100%; padding:clamp(64px,11vh,128px) clamp(22px,4vw,64px) clamp(40px,6vh,64px); color:#eef0e8;">
+      <div style="max-width:1180px; margin:0 auto;">
+        <div data-fade style="font-family:'Spline Sans Mono',monospace; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#b9bca6; margin-bottom:36px;">02 — About</div>
+        <p data-fade style="font-weight:300; font-size:clamp(26px,3.8vw,46px); line-height:1.28; letter-spacing:-.012em; max-width:20ch;">Trees to Trails is a record of the journey — the trails we seek out for biking, hiking, camping, and the slow business of getting outside.</p>
+        <p data-fade style="margin-top:30px; max-width:50ch; font-size:clamp(15.5px,1.4vw,17.5px); line-height:1.66; color:#cdcfbf;">Started years ago, set down, and picked back up. Photographs are ours; the writing is the part we keep returning to. If a single entry sends you somewhere new — at the right hour, by the long way around — it did its job.</p>
+
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; margin-top:clamp(56px,9vh,96px); padding-top:30px; border-top:1px solid rgba(238,240,232,.22);">
+          <a href="/" style="display:flex; align-items:center; gap:13px; color:#eef0e8;">
+            <svg width="17" height="23" viewBox="0 0 28 38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7,11 14,5 21,11"></polyline><polyline points="7,16.5 14,10.5 21,16.5"></polyline><polyline points="7,22 14,16 21,22"></polyline><line x1="14" y1="22" x2="14" y2="30.5"></line></svg>
+            <span style="font-size:17px; letter-spacing:.04em;">Trees&nbsp;to&nbsp;Trails</span>
+          </a>
+          <div style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#b9bca6; text-align:right;">Made afield in California · MMXXVI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const root = document;
+
+    // ---- fade-in on scroll ----
+    const faders = root.querySelectorAll('[data-fade]');
+    faders.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(26px)';
+      el.style.transition = 'opacity 1.05s cubic-bezier(.2,.7,.2,1), transform 1.05s cubic-bezier(.2,.7,.2,1)';
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          // small stagger for siblings
+          const sibs = Array.from(el.parentElement ? el.parentElement.querySelectorAll(':scope > [data-fade]') : [el]);
+          const idx = Math.max(0, sibs.indexOf(el));
+          el.style.transitionDelay = (idx * 90) + 'ms';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+    faders.forEach((el) => io.observe(el));
+
+    // ---- gentle parallax on feature images ----
+    const px = Array.from(root.querySelectorAll('[data-parallax]'));
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const vh = window.innerHeight;
+        px.forEach((img) => {
+          const r = img.parentElement.getBoundingClientRect();
+          const prog = (r.top + r.height / 2 - vh / 2) / vh; // -1..1 ish
+          const shift = Math.max(-46, Math.min(46, -prog * 46));
+          img.style.transform = 'translateY(' + shift + 'px)';
+        });
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ---- index hover image preview ----
+    const preview = root.querySelector('#ttPreview');
+    const previewImg = root.querySelector('#ttPreviewImg');
+    const rows = Array.from(root.querySelectorAll('.ttRow'));
+    let raf = null, tx = 0, ty = 0, cx = 0, cy = 0, active = false;
+    const loop = () => {
+      cx += (tx - cx) * 0.16; cy += (ty - cy) * 0.16;
+      if (preview) preview.style.left = cx + 'px';
+      if (preview) preview.style.top = cy + 'px';
+      raf = requestAnimationFrame(loop);
+    };
+    rows.forEach((row) => {
+      row.addEventListener('mouseenter', () => {
+        if (!preview) return;
+        active = true;
+        if (previewImg) previewImg.src = row.getAttribute('data-img');
+        preview.style.opacity = '1';
+        preview.style.transform = 'translate(-50%,-50%) scale(1)';
+        row.style.paddingLeft = '20px';
+        row.style.background = 'rgba(35,33,28,.04)';
+        if (!raf) loop();
+      });
+      row.addEventListener('mousemove', (ev) => { tx = ev.clientX + 150; ty = ev.clientY; if(!active){cx=tx;cy=ty;} });
+      row.addEventListener('mouseleave', () => {
+        if (!preview) return;
+        active = false;
+        preview.style.opacity = '0';
+        preview.style.transform = 'translate(-50%,-50%) scale(.96)';
+        row.style.paddingLeft = '6px';
+        row.style.background = 'transparent';
+      });
+    });
+});
+</script>
+</body>
+</html>

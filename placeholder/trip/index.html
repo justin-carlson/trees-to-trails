@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Seven Sisters | Trees to Trails</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html{ scroll-behavior:smooth; }
+    body{ background:#efe9dd; color:#23211c; -webkit-font-smoothing:antialiased; }
+    ::selection{ background:#38463c; color:#efe9dd; }
+    a{ color:inherit; text-decoration:none; }
+    @keyframes ttKenburns{ 0%{ transform:scale(1.05); } 100%{ transform:scale(1.13); } }
+    @keyframes ttDash{ to{ stroke-dashoffset:0; } }
+  </style>
+</head>
+<body>
+<div style="font-family:'Newsreader',Georgia,serif; background:#efe9dd; overflow-x:hidden;">
+
+  <!-- reading progress -->
+  <div style="position:fixed; top:0; left:0; right:0; height:2px; z-index:60; background:transparent;">
+    <div id="ttProgress" style="height:100%; width:0%; background:#38463c;"></div>
+  </div>
+
+  <!-- floating mini-nav (fades in after hero) -->
+  <header id="ttMini" style="position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:16px clamp(20px,4vw,56px); background:rgba(239,233,221,.86); backdrop-filter:blur(10px); border-bottom:1px solid rgba(35,33,28,.12); transform:translateY(-104%); transition:transform .45s cubic-bezier(.2,.7,.2,1);">
+    <a href="/" style="display:flex; align-items:center; gap:11px; color:#23211c;">
+      <svg width="14" height="19" viewBox="0 0 28 38" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="7,11 14,5 21,11"></polyline><polyline points="7,16.5 14,10.5 21,16.5"></polyline><polyline points="7,22 14,16 21,22"></polyline><line x1="14" y1="22" x2="14" y2="30.5"></line></svg>
+      <span style="font-size:15px; letter-spacing:.04em;">Trees&nbsp;to&nbsp;Trails</span>
+    </a>
+    <a href="/" style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#6f685a;">← All trips</a>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section data-screen-label="Trip hero" style="position:relative; height:100vh; min-height:660px; width:100%; overflow:hidden; background:#15140e;">
+    <img src="/assets/mt-tam.jpg" alt="A road winding down the golden hills of Mount Tamalpais" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 42%; animation:ttKenburns 28s ease-in-out infinite alternate;">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,18,12,.46) 0%, rgba(20,18,12,.06) 30%, rgba(20,18,12,0) 50%, rgba(20,18,12,.72) 100%);"></div>
+
+    <div style="position:absolute; top:0; left:0; right:0; display:flex; align-items:center; justify-content:space-between; padding:30px clamp(22px,4vw,64px); color:#f3efe4; z-index:3;">
+      <a href="/" style="display:flex; align-items:center; gap:12px;">
+        <svg width="15" height="21" viewBox="0 0 28 38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7,11 14,5 21,11"></polyline><polyline points="7,16.5 14,10.5 21,16.5"></polyline><polyline points="7,22 14,16 21,22"></polyline><line x1="14" y1="22" x2="14" y2="30.5"></line></svg>
+        <span style="font-size:16px; letter-spacing:.04em;">Trees&nbsp;to&nbsp;Trails</span>
+      </a>
+      <a href="/" style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; opacity:.85;">← All trips</a>
+    </div>
+
+    <div style="position:absolute; left:clamp(22px,4vw,64px); right:clamp(22px,4vw,64px); bottom:clamp(54px,9vh,104px); color:#f4f0e6; z-index:3;">
+      <div style="font-family:'Spline Sans Mono',monospace; font-size:12px; letter-spacing:.24em; text-transform:uppercase; opacity:.85; margin-bottom:22px; display:flex; flex-wrap:wrap; gap:10px 20px;"><span>Trip 01</span><span style="opacity:.7;">Marin County, California</span><span style="opacity:.7;">Road bike</span></div>
+      <h1 style="font-weight:300; font-size:clamp(42px,8vw,116px); line-height:.96; letter-spacing:-.02em; max-width:15ch;">The <span style="font-style:italic;">Seven Sisters</span></h1>
+      <p style="margin-top:22px; max-width:40ch; font-size:clamp(17px,2vw,22px); line-height:1.4; font-weight:300; opacity:.94;">Mount Tamalpais has a hundred famous views. We went looking for its rhythm instead — seven rollers ridden west, into the fog.</p>
+    </div>
+  </section>
+
+  <!-- ============ TRAIL FACTS (green band) ============ -->
+  <section data-screen-label="Trail facts" style="background:#38463c; color:#eef0e6;">
+    <div style="max-width:1180px; margin:0 auto; padding:clamp(34px,5vw,52px) clamp(22px,4vw,64px); display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:32px 28px;">
+      <div><div style="font-family:'Spline Sans Mono',monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#aab3a0; margin-bottom:9px;">Distance</div><div style="font-size:clamp(24px,3vw,34px); font-weight:300;">26 mi <span style="font-size:.62em; color:#aab3a0;">loop</span></div></div>
+      <div><div style="font-family:'Spline Sans Mono',monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#aab3a0; margin-bottom:9px;">Elevation</div><div style="font-size:clamp(24px,3vw,34px); font-weight:300;">2,460 ft</div></div>
+      <div><div style="font-family:'Spline Sans Mono',monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#aab3a0; margin-bottom:9px;">High point</div><div style="font-size:clamp(24px,3vw,34px); font-weight:300;">2,571 ft</div></div>
+      <div><div style="font-family:'Spline Sans Mono',monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#aab3a0; margin-bottom:9px;">Difficulty</div><div style="font-size:clamp(24px,3vw,34px); font-weight:300;">Moderate–hard</div></div>
+      <div><div style="font-family:'Spline Sans Mono',monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#aab3a0; margin-bottom:9px;">Surface</div><div style="font-size:clamp(24px,3vw,34px); font-weight:300;">Paved road</div></div>
+      <div><div style="font-family:'Spline Sans Mono',monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:#aab3a0; margin-bottom:9px;">Best season</div><div style="font-size:clamp(24px,3vw,34px); font-weight:300;">Sept–Nov</div></div>
+    </div>
+  </section>
+
+  <!-- ============ LEDE ============ -->
+  <section style="background:#efe9dd; padding:clamp(72px,12vh,152px) clamp(22px,4vw,64px) clamp(40px,6vh,72px);">
+    <div style="max-width:760px; margin:0 auto;">
+      <div data-fade style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#8a7350; margin-bottom:30px;">The idea</div>
+      <p data-fade style="font-weight:300; font-size:clamp(24px,3.2vw,36px); line-height:1.32; letter-spacing:-.01em; text-wrap:pretty;">Everyone climbs Tam to stand on East Peak. We went the other way — out along the ridge, west, until the road runs into the ocean fog and the only thing left to do is breathe.</p>
+      <div data-fade style="margin-top:42px; columns:2; column-gap:42px; font-size:17px; line-height:1.72; color:#403b32; max-width:760px;">
+        <p style="margin-bottom:18px;">The Seven Sisters aren't a climb so much as a conversation. Strung along West Ridgecrest Boulevard, they're a run of seven short, sharp rollers — each one a quick punch up and a faster drop down, over and over, like the ridge is breathing under you. Most riders treat them as an obstacle on the way to somewhere. We think they <em>are</em> the somewhere.</p>
+        <p style="margin-bottom:0;">Ride them late. By four o'clock in autumn the marine layer starts piling against the coast, and the low sun turns the grass the color of a struck match. You crest a Sister, the Pacific opens up below, and for a second you're flying. Then the next one. Seven times. By the last you've stopped counting and started grinning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- big photo -->
+  <figure data-screen-label="Photo: ridge" style="margin:clamp(20px,5vh,56px) 0; position:relative;">
+    <img src="/assets/tree-and-trail.jpg" alt="The forested spine of the Marin ridge rolling toward the sea" style="width:100%; height:clamp(380px,76vh,820px); object-fit:cover; object-position:center 56%; display:block;">
+    <figcaption style="position:absolute; left:clamp(22px,4vw,64px); bottom:22px; font-family:'Spline Sans Mono',monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:#f2eee3; background:rgba(20,18,12,.34); backdrop-filter:blur(3px); padding:7px 12px;">West Ridgecrest — looking toward Bolinas</figcaption>
+  </figure>
+
+  <!-- ============ GETTING THERE ============ -->
+  <section style="background:#efe9dd; padding:clamp(40px,7vh,86px) clamp(22px,4vw,64px);">
+    <div style="max-width:760px; margin:0 auto;">
+      <h2 data-fade style="font-weight:400; font-size:clamp(26px,3.4vw,40px); letter-spacing:-.01em; margin-bottom:26px;">Getting there</h2>
+      <p data-fade style="font-size:17px; line-height:1.74; color:#403b32; margin-bottom:18px;">From the city it's a thirty-minute drive: north over the Golden Gate, off at Mill Valley, and up Panoramic Highway with the windows down. Park at the <strong>Pantoll Ranger Station</strong> — there's a lot, a restroom, and water, which is the last reliable water you'll see for a while. Roll out west on Ridgecrest and the Sisters start almost immediately.</p>
+      <p data-fade style="font-size:17px; line-height:1.74; color:#403b32; margin-bottom:0;">If you'd rather earn the ridge, ride up from Mill Valley instead and add about 1,500 feet and a long, shaded grind through the redwoods on the way. We've done it both ways. On the day you want the rollers to feel like a gift, drive to Pantoll. On the day you want to deserve them, don't.</p>
+    </div>
+  </section>
+
+  <!-- ============ ROUTE MAP ============ -->
+  <section data-screen-label="Route map" style="background:#efe9dd; padding:clamp(20px,4vh,52px) clamp(22px,4vw,64px) clamp(48px,8vh,96px);">
+    <div data-fade style="max-width:1080px; margin:0 auto; background:#e7dfcd; border:1px solid rgba(35,33,28,.16); padding:clamp(22px,3vw,40px);">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:18px; margin-bottom:26px;">
+        <div style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8a7350;">The route — Ridgecrest loop</div>
+        <div style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#6f685a;">37.90°N · 122.60°W</div>
+      </div>
+
+      <div data-om-raster style="position:relative; width:100%;">
+        <svg viewBox="0 0 1000 430" style="width:100%; height:auto; display:block;" fill="none">
+          <!-- faint contour lines -->
+          <g stroke="rgba(35,33,28,.07)" stroke-width="1">
+            <path d="M0,70 C200,40 360,96 540,70 C720,44 880,86 1000,64"></path>
+            <path d="M0,150 C200,120 380,170 560,148 C740,126 880,162 1000,142"></path>
+            <path d="M0,250 C220,222 380,268 560,248 C760,226 880,260 1000,244"></path>
+            <path d="M0,346 C220,320 380,360 560,344 C760,326 880,356 1000,342"></path>
+          </g>
+          <!-- the road -->
+          <path id="ttRoad" d="M70,360 C150,360 168,250 250,232 C338,212 360,150 300,120 C250,96 250,150 330,176 C470,220 520,150 560,120 C640,62 720,96 786,150 C860,210 900,150 930,96" stroke="#8a7350" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="7 7"></path>
+          <!-- nodes -->
+          <g>
+            <circle cx="70" cy="360" r="6" fill="#38463c"></circle>
+            <circle cx="300" cy="120" r="5" fill="#23211c"></circle>
+            <circle cx="560" cy="120" r="5" fill="#23211c"></circle>
+            <circle cx="786" cy="150" r="5" fill="#23211c"></circle>
+            <circle cx="930" cy="96" r="6" fill="#8a4a2e"></circle>
+          </g>
+          <g font-family="'Spline Sans Mono',monospace" font-size="14" letter-spacing="1.4" fill="#23211c">
+            <text x="70" y="392" text-anchor="start">PANTOLL · START</text>
+            <text x="300" y="104" text-anchor="middle">THE SISTERS</text>
+            <text x="560" y="104" text-anchor="middle">BOLINAS-FAIRFAX</text>
+            <text x="786" y="134" text-anchor="middle">ALPINE LAKE</text>
+            <text x="930" y="80" text-anchor="end" fill="#8a4a2e">FAIRFAX</text>
+          </g>
+        </svg>
+      </div>
+
+      <!-- elevation profile -->
+      <div style="margin-top:30px; border-top:1px solid rgba(35,33,28,.16); padding-top:22px;">
+        <div style="display:flex; justify-content:space-between; font-family:'Spline Sans Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:#8a7350; margin-bottom:10px;"><span>Elevation profile</span><span>0 → 26 mi</span></div>
+        <svg data-om-raster viewBox="0 0 1000 150" style="width:100%; height:auto; display:block;" preserveAspectRatio="none">
+          <path d="M0,150 L0,118 C60,110 90,60 140,52 C175,46 190,70 215,66 C245,60 250,28 290,34 C320,38 330,66 365,60 C400,54 410,30 450,38 C490,46 500,72 540,64 C585,55 600,40 640,48 C690,58 700,96 760,104 C820,112 850,86 900,80 C950,74 980,96 1000,92 L1000,150 Z" fill="#38463c" fill-opacity="0.16"></path>
+          <path d="M0,118 C60,110 90,60 140,52 C175,46 190,70 215,66 C245,60 250,28 290,34 C320,38 330,66 365,60 C400,54 410,30 450,38 C490,46 500,72 540,64 C585,55 600,40 640,48 C690,58 700,96 760,104 C820,112 850,86 900,80 C950,74 980,96 1000,92" fill="none" stroke="#38463c" stroke-width="2"></path>
+        </svg>
+        <div style="display:flex; justify-content:space-between; font-family:'Spline Sans Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:#6f685a; margin-top:8px;"><span>Pantoll</span><span>The Sisters</span><span>Alpine Dam</span><span>Fairfax</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PULL QUOTE ============ -->
+  <section style="background:#efe9dd; padding:clamp(40px,9vh,120px) clamp(22px,4vw,64px);">
+    <blockquote data-fade style="max-width:1000px; margin:0 auto; text-align:center;">
+      <p style="font-style:italic; font-weight:300; font-size:clamp(28px,4.6vw,60px); line-height:1.18; letter-spacing:-.014em; color:#2c352d; text-wrap:balance;">“By the last Sister you've stopped counting climbs and started counting the light.”</p>
+    </blockquote>
+  </section>
+
+  <!-- ============ GEAR + NOTES ============ -->
+  <section data-screen-label="Gear and notes" style="background:#efe9dd; padding:clamp(20px,4vh,40px) clamp(22px,4vw,64px) clamp(56px,9vh,110px);">
+    <div style="max-width:1080px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(36px,5vw,72px); align-items:start;">
+
+      <!-- gear -->
+      <div data-fade>
+        <h3 style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8a7350; margin-bottom:24px; padding-bottom:14px; border-bottom:1px solid rgba(35,33,28,.2);">What we packed</h3>
+        <ul style="list-style:none;">
+          <li style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid rgba(35,33,28,.1); font-size:16.5px;"><span>Lightweight wind shell</span><span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#6f685a;">fog drops fast</span></li>
+          <li style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid rgba(35,33,28,.1); font-size:16.5px;"><span>Two bottles</span><span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#6f685a;">no water past Pantoll</span></li>
+          <li style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid rgba(35,33,28,.1); font-size:16.5px;"><span>Compact 34 / 32-tooth</span><span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#6f685a;">the Sisters bite</span></li>
+          <li style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid rgba(35,33,28,.1); font-size:16.5px;"><span>Rear blinky light</span><span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#6f685a;">low-sun glare</span></li>
+          <li style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; font-size:16.5px;"><span>A real camera</span><span style="font-family:'Spline Sans Mono',monospace; font-size:12px; color:#6f685a;">you'll want it</span></li>
+        </ul>
+      </div>
+
+      <!-- practical notes -->
+      <div data-fade>
+        <h3 style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#8a7350; margin-bottom:24px; padding-bottom:14px; border-bottom:1px solid rgba(35,33,28,.2);">Good to know</h3>
+        <div style="display:flex; flex-direction:column; gap:22px;">
+          <div><div style="font-size:18px; margin-bottom:5px;">Parking</div><p style="font-size:15.5px; line-height:1.6; color:#544e42;">Pantoll lot is $8, cash or card at the machine; it fills by mid-morning on clear weekends. Arrive before ten or come for the evening.</p></div>
+          <div><div style="font-size:18px; margin-bottom:5px;">Permits</div><p style="font-size:15.5px; line-height:1.6; color:#544e42;">None to ride. If you want to stay, Pantoll's first-come walk-in campground is one of the best-kept secrets in the Bay Area.</p></div>
+          <div><div style="font-size:18px; margin-bottom:5px;">Where to eat</div><p style="font-size:15.5px; line-height:1.6; color:#544e42;">Drop into Fairfax at the far end and reward yourself at Gestalt Haus or a slice from Rustic Bakery. Coffee back in Mill Valley if you loop south.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEXT / CLOSING ============ -->
+  <section data-screen-label="Closing" style="position:relative; min-height:78vh; display:flex; align-items:flex-end; overflow:hidden; background:#1d211b;">
+    <img src="/assets/east-bay.jpg" alt="A cyclist's silhouette against a wetland sunset" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 46%; opacity:.55;">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,22,16,.32) 0%, rgba(20,22,16,.5) 60%, rgba(20,22,16,.92) 100%);"></div>
+    <div style="position:relative; z-index:2; width:100%; padding:clamp(56px,10vh,120px) clamp(22px,4vw,64px) clamp(36px,6vh,60px); color:#eef0e6;">
+      <div style="max-width:1080px; margin:0 auto;">
+        <div style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#c2c5b2; margin-bottom:24px;">Next trip</div>
+        <a href="/" style="display:inline-block;">
+          <h2 style="font-weight:300; font-size:clamp(32px,5.4vw,72px); line-height:1.0; letter-spacing:-.018em; max-width:16ch;">Sleeping in the <span style="font-style:italic;">Alabama Hills</span> <span style="font-family:'Spline Sans Mono',monospace; font-size:.26em; vertical-align:middle; letter-spacing:.1em; opacity:.8;">→</span></h2>
+        </a>
+
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px; margin-top:clamp(52px,8vh,90px); padding-top:28px; border-top:1px solid rgba(238,240,230,.22);">
+          <a href="/" style="display:flex; align-items:center; gap:12px; color:#eef0e6;">
+            <svg width="15" height="21" viewBox="0 0 28 38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="7,11 14,5 21,11"></polyline><polyline points="7,16.5 14,10.5 21,16.5"></polyline><polyline points="7,22 14,16 21,22"></polyline><line x1="14" y1="22" x2="14" y2="30.5"></line></svg>
+            <span style="font-size:16px; letter-spacing:.04em;">Trees&nbsp;to&nbsp;Trails</span>
+          </a>
+          <div style="font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#c2c5b2; text-align:right;">Made afield in California · MMXXVI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const root = document;
+
+    // reading progress + mini-nav
+    const bar = root.querySelector('#ttProgress');
+    const mini = root.querySelector('#ttMini');
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        const p = h > 0 ? Math.min(1, Math.max(0, window.scrollY / h)) : 0;
+        if (bar) bar.style.width = (p * 100) + '%';
+        if (mini) mini.style.transform = window.scrollY > window.innerHeight * 0.85 ? 'translateY(0)' : 'translateY(-104%)';
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // fade-ins
+    const faders = root.querySelectorAll('[data-fade]');
+    faders.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1)';
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+    faders.forEach((el) => io.observe(el));
+
+});
+</script>
+</body>
+</html>
